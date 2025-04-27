@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+        <h1 class="text-2xl font-bold text-center mb-6">Diabetes Prediction</h1>
+        <form action="/predict" method="post" class="space-y-4">
+            <input type="number" name="Pregnancies" placeholder="Pregnancies" required step="any" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <input type="number" name="Glucose" placeholder="Glucose" required step="any" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <input type="number" name="BloodPressure" placeholder="Blood Pressure" required step="any" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <input type="number" name="SkinThickness" placeholder="Skin Thickness" required step="any" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <input type="number" name="Insulin" placeholder="Insulin" required step="any" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <input type="number" name="BMI" placeholder="BMI" required step="any" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <input type="number" name="DiabetesPedigreeFunction" placeholder="Diabetes Pedigree Function" required step="any" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <input type="number" name="Age" placeholder="Age" required step="any" class="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Predict</button>
+        </form>
+        {% if prediction_text %}
+        <p class="mt-4 text-center text-lg font-semibold {{ 'text-green-600' if 'Non-Diabetic' in prediction_text else 'text-red-600' }}">{{ prediction_text }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
