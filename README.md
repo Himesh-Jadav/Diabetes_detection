@@ -65,7 +65,7 @@ ROC-AUC Score: 0.885
 
 # Final Model:
 
-Random Forest selected for deployment due to better generalization on test data.
+Random Forest selected for deployment due to better generalization on test data-sets.
 
 🖥️ Web Application (Flask)
 Users can input their medical data via a simple HTML form.
